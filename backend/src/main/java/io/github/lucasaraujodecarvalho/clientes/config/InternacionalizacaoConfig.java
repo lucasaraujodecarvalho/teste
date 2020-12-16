@@ -1,4 +1,4 @@
-package io.github.lucasaraujodecarvalho.clientes;
+package io.github.lucasaraujodecarvalho.clientes.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import java.util.Locale;
 
 @Configuration
-public class configInternacionalizacaoConfig {
+public class InternacionalizacaoConfig {
 
     @Bean
     public MessageSource messageSource(){
