@@ -4,6 +4,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Usuario } from './login/usuario';
+import { Login } from './usuarios/login';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,10 @@ export class AuthService {
     return this.http.post<any>(this.apiURL, usuario);
   }
 
+  getUsuarios() : Observable<Login[]> {
+    return this.http.get<Login[]>(this.apiURL);
+  }
+
   tentarLogar(username: string, password: string) : Observable<any> {
     const params = new HttpParams().set('username', username).set('password', password).set('grant_type', 'password')
 
@@ -60,7 +65,6 @@ export class AuthService {
     const token = this.obterToken();
     if (token) {
       const usuario = this.jwtHelper.decodeToken(token).user_name
-      console.log(usuario);
       return usuario;
     }
     return null;

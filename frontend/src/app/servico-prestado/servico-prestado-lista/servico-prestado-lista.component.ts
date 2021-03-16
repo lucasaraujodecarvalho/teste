@@ -23,7 +23,6 @@ export class ServicoPrestadoListaComponent implements OnInit {
   }
 
   consultar() {
-    console.log(this.nome, this.mes);
     this.service
       .buscar(this.nome, this.mes)
       .subscribe(response => 

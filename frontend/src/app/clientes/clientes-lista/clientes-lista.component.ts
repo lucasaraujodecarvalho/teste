@@ -25,7 +25,7 @@ export class ClientesListaComponent implements OnInit {
   ngOnInit(): void {
     this.service
     .getClientes()
-    .subscribe( resposta => this.clientes = resposta );
+    .subscribe( resposta => this.clientes = resposta )
   }
 
   novoCadastro() {
